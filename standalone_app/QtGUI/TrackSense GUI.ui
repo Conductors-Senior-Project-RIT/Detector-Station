@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>guiEOTHOT</class>
+ <widget class="QMainWindow" name="guiEOTHOT">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1102</width>
+    <height>636</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TrackSense Laptop UI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QCheckBox" name="checkEOT">
+      <property name="text">
+       <string>Save to EOT file?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="5">
+     <widget class="QTableWidget" name="tblTrainData"/>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btnTrack">
+      <property name="text">
+       <string>Start Tracking</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="spcrAudioDevice">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>600</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="cmboAudioSelector">
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QCheckBox" name="checkComb">
+      <property name="text">
+       <string>Save to combined file?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="btnLoadLog">
+        <property name="text">
+         <string>Load Log File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="slidrAudioVolume">
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <widget class="QCheckBox" name="checkHOT">
+      <property name="text">
+       <string>Save to HOT file?</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblAudioDevc">
+      <property name="text">
+       <string>Select an Audio Device</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QCheckBox" name="checkOnline">
+      <property name="text">
+       <string>Online Mode</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1102</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTable">
+    <property name="title">
+     <string>Table</string>
+    </property>
+    <addaction name="actionTimestamp"/>
+    <addaction name="actionUnit_Address"/>
+    <addaction name="actionSource"/>
+    <addaction name="actionBattery_Condition"/>
+    <addaction name="actionBattery_Charge"/>
+    <addaction name="actionPressure"/>
+    <addaction name="actionTurbine_Status"/>
+    <addaction name="actionMotion_Status"/>
+    <addaction name="actionMarker_Light"/>
+    <addaction name="actionMarker_Battery"/>
+    <addaction name="actionHOT_Command"/>
+    <addaction name="actionSignal_Strength"/>
+   </widget>
+   <addaction name="menuTable"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionUnit_Address">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Unit Address</string>
+   </property>
+  </action>
+  <action name="actionMessage_Type">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Message Type</string>
+   </property>
+  </action>
+  <action name="actionBattery_Condition">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Battery Condition</string>
+   </property>
+  </action>
+  <action name="actionBattery_Charge">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Battery Charge</string>
+   </property>
+  </action>
+  <action name="actionPressure">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionTurbine_Status">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Turbine Status</string>
+   </property>
+  </action>
+  <action name="actionMotion_Status">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Motion Status</string>
+   </property>
+  </action>
+  <action name="actionMarker_Light">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Marker Light</string>
+   </property>
+  </action>
+  <action name="actionMarker_Battery">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Marker Battery</string>
+   </property>
+  </action>
+  <action name="actionHOT_Command">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>HOT Command</string>
+   </property>
+  </action>
+  <action name="actionTimestamp">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Timestamp</string>
+   </property>
+  </action>
+  <action name="actionSource">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Source</string>
+   </property>
+  </action>
+  <action name="actionSignal_Strength">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Signal Strength</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
