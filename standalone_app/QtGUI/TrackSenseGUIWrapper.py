@@ -99,6 +99,9 @@ class TrackSenseGUIWrapper(QtWidgets.QMainWindow):
         self.audioComp.moveToThread(self.audioThread)
         self.audioThread.start()
 
+        # automatically assume saved to combined file
+        self.ui.checkComb.setChecked(True)
+
     # starts tracking
     def toggleTracking(self):
         if not self.isTracking:
