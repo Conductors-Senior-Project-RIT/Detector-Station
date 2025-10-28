@@ -9,7 +9,13 @@ Start-Sleep -Seconds 2
 # Set focus to GNU window
 [void]$wshShell.AppActivate( 'TrackSenseGNURadioWorkflow.grc - C:\Users\dell\Desktop' )
 
-# Send F6 key (execute shortcut)
+# Send F5 key (execute shortcut: generate graph)
+$wshShell.SendKeys( '{F5}' )
+
+# Wait for activation to succeed
+Start-Sleep -Seconds 0.5
+
+# Send F6 key (execute shortcut: execute graph)
 $wshShell.SendKeys( '{F6}' )
 
 # Wait for activation to succeed
