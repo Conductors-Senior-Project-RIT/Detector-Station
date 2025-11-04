@@ -1,13 +1,18 @@
+# Replace the content in quotes with the computer username.
+$username = "dell"
+
 $wshShell = New-Object -ComObject WScript.Shell
 
 # Start radio companion
-Start-Process -FilePath "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GNU Radio\GNU Radio Companion.lnk"
+$radiopath = "C:\Users\" + $username + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GNU Radio\GNU Radio Companion.lnk"
+Start-Process -FilePath $radiopath
 
 # Wait for load up
 Start-Sleep -Seconds 4
 
 # Set focus to GNU window
-[void]$wshShell.AppActivate( 'TrackSenseGNURadioWorkflow.grc - C:\Users\dell\Desktop' )
+$windowname = "TrackSenseGNURadioWorkflow.grc - C:\Users\" + $username + "\Desktop"
+[void]$wshShell.AppActivate( $windowname )
 
 # Send F5 key (execute shortcut: generate graph)
 $wshShell.SendKeys( '{F5}' )
@@ -22,4 +27,5 @@ $wshShell.SendKeys( '{F6}' )
 Start-Sleep -Seconds 1
 
 # Start standalone app
-Start-Process -FilePath "C:\Users\dell\Desktop\main.exe"
+$apppath = "C:\Users\" + $username + "\Desktop\main.exe"
+Start-Process -FilePath $apppath
