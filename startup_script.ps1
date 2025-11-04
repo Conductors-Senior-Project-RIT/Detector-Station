@@ -1,10 +1,10 @@
 $wshShell = New-Object -ComObject WScript.Shell
 
 # Start radio companion
-$process = Start-Process -FilePath "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GNU Radio\GNU Radio Companion.lnk"
+Start-Process -FilePath "C:\Users\dell\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GNU Radio\GNU Radio Companion.lnk"
 
 # Wait for load up
-$process.WaitForInputIdle(5000)
+Start-Sleep -Seconds 4
 
 # Set focus to GNU window
 [void]$wshShell.AppActivate( 'TrackSenseGNURadioWorkflow.grc - C:\Users\dell\Desktop' )
