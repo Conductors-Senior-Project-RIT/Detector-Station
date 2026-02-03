@@ -134,6 +134,9 @@ class EOTHandler(QObject):
                         # self.checkSignalMax(vol)
                         pct = self.getAudioPercentage(audioProcessor, vol)
                         self.handle_HOT(data_to_send, pct)
+                    elif buffer.bind(self.DPU_FRAME_SYNC) == 0:
+                        # Hear me out: detecting DPU is likely already possible with the existing detection system.
+                        print("Frame sync signature matching DPU detected at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")))
             else:
                 logger.warning("Not connected to GNU radio")
 
