@@ -2,9 +2,8 @@
 $username = "username"
 # If this computer has Desktop as a subfolder of OneDrive, add "\OneDrive" here. DO NOT FORGET THE SLASH.
 $onedrive = ""
-# The program folder installed for GNU radio. If this is an older install, this folder will likely be "GNU Radio".
-# If this is a new install, the installer has changed the folder name to "radioconda", so this will need to be 
-# replaced.
+# The program folder installed for GNU radio. If this is an older install, this folder will be "GNU Radio".
+# If this is a new install, the folder will be "radioconda".
 $shortcutdir = "radioconda"
 
 $wshShell = New-Object -ComObject WScript.Shell
