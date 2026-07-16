@@ -5,7 +5,7 @@ $onedrive = ""
 # The program folder installed for GNU radio. If this is an older install, this folder will likely be "GNU Radio".
 # If this is a new install, the installer has changed the folder name to "radioconda", so this will need to be 
 # replaced.
-$shortcutdir = "GNU Radio"
+$shortcutdir = "radioconda"
 
 $wshShell = New-Object -ComObject WScript.Shell
 
