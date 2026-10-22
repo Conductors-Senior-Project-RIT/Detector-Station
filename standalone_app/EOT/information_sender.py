@@ -46,6 +46,13 @@ class EOTRequestWorker(QRunnable):
                 json=request_obj,
             )
             resp.raise_for_status()
+
+            resp = requests.post(
+                f"{self.host}/api/notify",
+                json={"station_id": self.stat_id}
+            )
+            resp.raise_for_status()
+
             self.signals.success.emit()
         except Timeout:
             request_obj["date_rec"] = self.timestamp
